@@ -147,3 +147,6 @@ fi
 if [ -f /home/suponer/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
 	source /home/suponer/.config/synth-shell/alias.sh
 fi
+
+# alias for checking power supply 
+alias power='upower -i /org/freedesktop/UPower/devices/battery_BAT1' 
