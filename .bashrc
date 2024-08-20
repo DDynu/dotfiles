@@ -127,7 +127,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # extra commands added by Dang Huynh for the pc
-fastfetch --logo kde-ubuntu
+fastfetch 
 
 #nvim search with preview with fzf
 alias fnvim='nvim $(fzf --preview="bat --color=always {}")'
