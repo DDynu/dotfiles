@@ -150,3 +150,10 @@ fi
 
 # alias for checking power supply 
 alias power='upower -i /org/freedesktop/UPower/devices/battery_BAT1' 
+
+# fnm
+FNM_PATH="/home/suponer/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
