@@ -127,7 +127,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # extra commands added by Dang Huynh for the pc
-fastfetch 
+fastfetch
 
 #nvim search with preview with fzf
 alias fnvim='nvim $(fzf --preview="bat --color=always {}")'
@@ -157,3 +157,10 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
+
+##-----------------------------------------------------
+## synth-shell-prompt.sh
+if [ -f /home/danghynh/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source /home/danghynh/.config/synth-shell/synth-shell-prompt.sh
+fi
+source /usr/share/nvm/init-nvm.sh

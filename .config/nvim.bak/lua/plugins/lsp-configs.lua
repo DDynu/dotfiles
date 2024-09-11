@@ -4,54 +4,60 @@ return {
         "williamboman/mason.nvim",
         config = function()
             require("mason").setup()
-        end
+        end,
     },
     --lspconfig mason
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", }
+                ensure_installed = { "lua_ls" },
             })
-        end
+        end,
     },
     --lspconfig
     {
         "neovim/nvim-lspconfig",
         config = function()
-            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local lspconfig = require("lspconfig")
+            --For lua
             lspconfig.lua_ls.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
             })
+            --For javascript
             lspconfig.tsserver.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
             })
+            --For html
             lspconfig.html.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
             })
+            --For css
             lspconfig.cssls.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
             })
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-            vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {})
-            vim.keymap.set({ 'n' }, '<leader>ca', vim.lsp.buf.code_action, {})
-        end
+            --For python
+            lspconfig.pyright.setup({
+                capabilities = capabilities,
+            })
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+            vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, {})
+            vim.keymap.set({ "n" }, "<leader>gl", ':vim.diagnostic.open_float()<CR>', {})
+        end,
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
         config = function()
-            require("telescope").setup ({
+            require("telescope").setup({
                 extensions = {
                     ["ui-select"] = {
-                        require("telescope.themes").get_dropdown {
-                        }
-
-                    }
-                }
+                        require("telescope.themes").get_dropdown({}),
+                    },
+                },
             })
             require("telescope").load_extension("ui-select")
-        end
+        end,
     },
 }
-
