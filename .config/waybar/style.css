@@ -1,0 +1,128 @@
+* {
+    border: none;
+    font-family: "Quicksand Bold", "Symbols Nerd Font Mono";
+    font-size: 14px;
+    font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+    min-height: 24px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#workspaces {
+    border-radius: 20px;
+    background-color: #11111b;
+    color: #b4befe;
+    margin-top: 8px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+#workspaces button {
+    color: #b4befe;
+}
+#workspaces button.active {
+    color: #3aff00;
+}
+
+/* Almost all of them modules main styles*/
+#group-power,
+#connection,
+#group-audio,
+#group-hardware,
+#group-player,
+#clock,
+#tray,
+#battery {
+    border-radius: 20px;
+    background-color: #11111b;
+    color: #b4befe;
+    margin-top: 8px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+/*left connect modules*/
+#cpu,
+#bluetooth,
+#backlight,
+#custom-playerctl {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-right: 5px;
+}
+
+/*right connect modules*/
+#network,
+#cava,
+#custom-playerlabel,
+#memory {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/*middle modules */
+#pulseaudio,
+#temperature {
+    padding-right: 5px;
+}
+
+#clock {
+    margin-right: 10px;
+}
+
+/* Custom css for each module */
+#battery {
+    color: #00ff97;
+}
+
+#battery.warning {
+    color: #e8ff00;
+}
+
+#battery.critical {
+    color: red;
+}
+
+#custom-power,
+#custom-quit,
+#custom-lock,
+#custome-reboot {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/*hover animations*/
+#workspaces:hover,
+#workspaces button:hover,
+#clock:hover,
+#group-hardware:hover,
+#group-audio:hover,
+#connection:hover,
+#group-player:hover,
+#battery:hover,
+#group-power:hover {
+    transition: 0.4s ease;
+    background-color: #af47d2;
+    color: #ff8f00;
+}
+
+#workspaces button:hover {
+    /* Remove predefined box-shadow */
+    box-shadow: none;
+    /* Remove predefined text-shadow */
+    text-shadow: none;
+    /* Remove predefined background color (white) */
+    background: none;
+    /* Disable predefined animations */
+    transition: 0.4s ease;
+    color: #ff8f00;
+}

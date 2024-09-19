@@ -1,0 +1,224 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "hyprland/workspaces",
+    "group/group-hardware",
+    "group/group-audio",
+  ],
+  "modules-center": ["group/group-player"],
+  "modules-right": [
+    "clock",
+    "group/connection",
+    "battery",
+    "tray",
+    "group/group-power",
+  ],
+
+  // Grouping
+  "group/connection": {
+    "orientation": "horizontal",
+    "modules": ["bluetooth", "network"],
+  },
+  "group/group-power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "custom/power", // First element is the "group leader" and won't ever be hidden
+      "custom/quit",
+      "custom/lock",
+      "custom/reboot",
+    ],
+  },
+  "group/group-audio": {
+    "orientation": "horizontal",
+    "modules": ["backlight", "pulseaudio", "cava"],
+  },
+  "group/group-hardware": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "temperature", "memory"],
+  },
+  "group/group-player": {
+    "orientation": "horizontal",
+    "modules": ["custom/playerctl", "custom/playerlabel"],
+  },
+
+  // Modules
+  "custom/quit": {
+    "format": "󰗼",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exit",
+  },
+  "custom/lock": {
+    "format": "󰍁",
+    "tooltip": false,
+    "on-click": "swaylock",
+  },
+  "custom/reboot": {
+    "format": "󰜉",
+    "tooltip": false,
+    "on-click": "reboot",
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "shutdown now",
+  },
+  "custom/arch": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "sh $HOME/.config/rofi/powermenu/type-6/powermenu.sh",
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "tooltip": false,
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󰥠",
+      "4": "",
+      "urgent": "",
+      // "active": "",
+      "default": "󰧞",
+    },
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4], // 2-5 on every monitor
+      // "HDMI-A-1": [5], // but only workspace 1 on HDMI-A-1
+    },
+  },
+  "clock": {
+    "format": "<span color='#76390a'></span> {:%H:%M}",
+    "format-alt": "<span color='#76390a'>󱛡</span> {:%A, %B %d, %Y (%R)}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#b4befe'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
+    },
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "<span color='#d8ff00'>{icon}</span> {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "tooltip": false,
+  },
+  "pulseaudio": {
+    "format": "<span color='#000cff'>{icon}</span> {volume}%",
+    "format-muted": "<span color='red'></span>",
+    "tooltip": false,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""],
+    },
+    "scroll-step": 1,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+  },
+  "bluetooth": {
+    "format": "<span color='#0b57d0'></span> {status}",
+    "format-disabled": "<span color='red'></span> {status}",
+    "format-connected": "<span color='#0b57d0'></span> {num_connections}",
+    "tooltip-format": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}   {device_address}",
+    "on-click": "blueman-manager",
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "<span color='#00d8ff'> </span>{essid}",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-disconnected": "<span color='red'>󰖪 </span>No Network",
+    "tooltip": false,
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format-charging": " {capacity}%",
+    "format-alt": "{icon} {time}",
+  },
+
+  "memory": {
+    "format": "<span color='#006b03'> </span> {}%",
+    "format-alt": "<span color='#006b03'> </span> {used}/{total} GiB",
+  },
+
+  "cpu": {
+    "format": "<span color='#f51700'></span> {usage}%",
+    "format-alt": "󰻠 {avg_frequency} GHz",
+    "interval": 5,
+  },
+
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10,
+  },
+  "temperature": {
+    // "thermal-zone": 2,
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+    // "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C ",
+    "format": "<span color ='#ff5100'></span> {temperatureC}°C",
+  },
+  "custom/playerctl": {
+    "format": "{icon}",
+    "return-type": "json",
+    "exec": "playerctl --player=elisa -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl --player=elisa play-pause",
+    "on-click-middle": "playerctl --player=elisa previous",
+    "on-click-right": "playerctl --player=elisa next",
+    "format-icons": {
+      "default": "",
+      "Playing": "<span foreground='#46c880'></span>",
+      "Paused": "<span foreground='#cdd6f4'></span>",
+    },
+  },
+  "custom/playerlabel": {
+    "format": "<span>{}</span>",
+    "return-type": "json",
+    "max-length": 48,
+    "exec": "playerctl --player=elisa -a metadata --format '{\"text\": \"{{title}} - {{markup_escape(artist)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(artist)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl --player=elisa play-pause",
+    "on-click-middle": "playerctl --player=elisa previous",
+    "on-click-right": "playerctl --player=elisa next",
+  },
+  "cava": {
+    //     "cava_config": "$XDG_CONFIG_HOME/cava/config",
+    "framerate": 60,
+    "autosens": 1,
+    "sensitivity": 1,
+    "bars": 14,
+    "lower_cutoff_freq": 50,
+    "higher_cutoff_freq": 10000,
+    "method": "pulse",
+    "source": "auto",
+    "stereo": true,
+    "reverse": false,
+    "bar_delimiter": 0,
+    "monstercat": true,
+    "waves": false,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "actions": {
+      "on-click-right": "mode",
+    },
+  },
+}
