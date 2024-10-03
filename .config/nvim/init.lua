@@ -18,5 +18,5 @@ local opts = {}
 require("lazy").setup("plugins")
 require("vim-options")
 
---add telescope
+vim.api.nvim_set_option("clipboard", "unnamedplus")
 
