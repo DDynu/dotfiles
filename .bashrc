@@ -88,10 +88,17 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# alias ll='ls -alF'
+# alias la='ls -A'
+# alias l='ls -CF'
 
+# Alias for ls
+# Changing "ls" to "exa"
+alias ls='exa --icons --color=always --group-directories-first'
+alias ll='exa -alF --icons --color=always --group-directories-first'
+alias la='exa -a --icons --color=always --group-directories-first'
+alias l='exa -F --icons --color=always --group-directories-first'
+alias l.='exa -a | egrep "^\."'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -131,6 +138,10 @@ export NVM_DIR="$HOME/.nvm"
 #nvim search with preview with fzf
 alias fnvim='nvim $(fzf --preview="bat --color=always {}")'
 
+#setup tmuxifier
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+
+eval "$(tmuxifier init -)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -163,3 +174,7 @@ if [ -f /home/danghynh/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( e
 	source /home/danghynh/.config/synth-shell/synth-shell-prompt.sh
 fi
 source /usr/share/nvm/init-nvm.sh
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
