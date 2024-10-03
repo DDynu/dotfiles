@@ -145,6 +145,7 @@
     "format-ethernet": "{ipaddr}/{cidr} ",
     "format-disconnected": "<span color='red'>󰖪 </span>No Network",
     "tooltip": false,
+        "on-click": "iwgtk",
   },
   "battery": {
     "format": "{icon} {capacity}%",
@@ -182,10 +183,10 @@
   "custom/playerctl": {
     "format": "{icon}",
     "return-type": "json",
-    "exec": "playerctl --player=elisa -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click": "playerctl --player=elisa play-pause",
-    "on-click-middle": "playerctl --player=elisa previous",
-    "on-click-right": "playerctl --player=elisa next",
+    "exec": "playerctl --player=%any,elisa -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl --player=%any,elisa play-pause",
+    "on-click-middle": "playerctl --player=%any,elisa previous",
+    "on-click-right": "playerctl --player=%any,elisa next",
     "format-icons": {
       "default": "",
       "Playing": "<span foreground='#46c880'></span>",
@@ -196,10 +197,10 @@
     "format": "<span>{}</span>",
     "return-type": "json",
     "max-length": 48,
-    "exec": "playerctl --player=elisa -a metadata --format '{\"text\": \"{{title}} - {{markup_escape(artist)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(artist)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click": "playerctl --player=elisa play-pause",
-    "on-click-middle": "playerctl --player=elisa previous",
-    "on-click-right": "playerctl --player=elisa next",
+    "exec": "playerctl --player=%any,elisa -a metadata --format '{\"text\": \"{{title}} - {{markup_escape(artist)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(artist)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl --player=%any,elisa play-pause",
+    "on-click-middle": "playerctl --player=%any,elisa previous",
+    "on-click-right": "playerctl --player=%any,elisa next",
   },
   "cava": {
     //     "cava_config": "$XDG_CONFIG_HOME/cava/config",
