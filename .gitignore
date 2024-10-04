@@ -1,0 +1,2 @@
+# Ignore the modules for tmux plugins, these plugins will be installed locally
+.tmux

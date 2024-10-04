@@ -1,6 +1,6 @@
 return {
 	{
-		"hrsh7th/cmp-nvim-lsp"
+		"hrsh7th/cmp-nvim-lsp",
 	},
 	{
 		"L3MON4D3/LuaSnip",
@@ -14,8 +14,10 @@ return {
 		config = function()
 			-- Set up nvim-cmp.
 			local cmp = require("cmp")
+			local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 			require("luasnip.loaders.from_vscode").lazy_load()
 			local luasnip = require("luasnip")
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 			cmp.setup({
 				snippet = {
 					-- REQUIRED - you must specify a snippet engine
