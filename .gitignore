@@ -1,2 +1,5 @@
 # Ignore the modules for tmux plugins, these plugins will be installed locally
 .tmux
+
+# Ignore lazy auto install
+.config/nvim/lazy-lock.json
