@@ -105,6 +105,7 @@
         "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
       },
     },
+      "on-click-right": "calendar",
   },
   "backlight": {
     "device": "intel_backlight",
@@ -145,7 +146,7 @@
     "format-ethernet": "{ipaddr}/{cidr} ",
     "format-disconnected": "<span color='red'>󰖪 </span>No Network",
     "tooltip": false,
-        "on-click": "iwgtk",
+    "on-click": "iwgtk",
   },
   "battery": {
     "format": "{icon} {capacity}%",
@@ -165,7 +166,7 @@
 
   "cpu": {
     "format": "<span color='#f51700'></span> {usage}%",
-    "format-alt": "󰻠 {avg_frequency} GHz",
+    "format-alt": "<span color='#f51700'>󰻠</span> {avg_frequency} GHz",
     "interval": 5,
   },
 
