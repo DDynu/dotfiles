@@ -52,7 +52,7 @@ return {
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, {})
-			vim.keymap.set({ "n" }, "<leader>gl", ":vim.diagnostic.open_float()<CR>", {})
+			vim.keymap.set({ "n" }, "<leader>gl", vim.diagnostic.open_float, { noremap = true, silent = true})
 		end,
 	},
 	{
