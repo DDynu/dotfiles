@@ -2,4 +2,4 @@
 .tmux
 
 # Ignore lazy auto install
-.config/nvim/lazy-lock.json
+.config/nvim/lazy*
