@@ -26,7 +26,7 @@ return {
 				capabilities = capabilities,
 			})
 			--For javascript
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
 			--For html
