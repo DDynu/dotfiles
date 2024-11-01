@@ -4,6 +4,7 @@
     font-size: 14px;
     font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
     min-height: 24px;
+	margin-bottom: 1px;
 }
 
 window#waybar {
@@ -26,6 +27,7 @@ window#waybar {
 #workspaces button {
     color: #b4befe;
 }
+
 #workspaces button.active {
     color: #3aff00;
 }
@@ -94,8 +96,8 @@ window#waybar {
 }
 
 #custom-notification {
-	font-size: 14px;
-	font-weight: bold;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 #custom-power,
