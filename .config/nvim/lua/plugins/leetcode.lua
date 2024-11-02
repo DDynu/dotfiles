@@ -144,6 +144,6 @@ return {
 
 	},
 	vim.keymap.set("n", "<C-r>", ":Leet run <CR>", {}),
-	vim.keymap.set("n", "<C-S-r>", ":Leet submit <CR>", {}),
+	vim.keymap.set("n", "<C-S>", ":Leet submit <CR>", {}),
 
 }
