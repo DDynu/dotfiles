@@ -1,0 +1,7 @@
+windowrulev2 = float, title:^(float)$
+windowrulev2 = size 1000 600,title:(float)
+
+# Floating classes for apps
+windowrulev2 = float, title:(iwgtk)|(Bluetooth)|(Calendar)
+windowrulev2 = size 1200 850, title:(iwgtk)|(Bluetooth)|(Calendar)
+windowrulev2 = float, class:(iwgtk)|(blueman-manager) 
