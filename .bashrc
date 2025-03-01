@@ -148,21 +148,21 @@ eval "$(tmuxifier init -)"
 
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
-if [ -f /home/suponer/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/suponer/.config/synth-shell/synth-shell-prompt.sh
+if [ -f $HOME/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source $HOME/.config/synth-shell/synth-shell-prompt.sh
 fi
 
 ##-----------------------------------------------------
 ## alias
-if [ -f /home/suponer/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/suponer/.config/synth-shell/alias.sh
+if [ -f $HOME/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source $HOME/.config/synth-shell/alias.sh
 fi
 
 # alias for checking power supply 
 alias power='upower -i /org/freedesktop/UPower/devices/battery_BAT1' 
 
 # fnm
-FNM_PATH="/home/suponer/.local/share/fnm"
+FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
@@ -178,4 +178,4 @@ source /usr/share/nvm/init-nvm.sh
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
-export PATH=/home/suponer/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
