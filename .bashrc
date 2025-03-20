@@ -179,3 +179,4 @@ source /usr/share/nvm/init-nvm.sh
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+[ -s "/home/suponer/.jabba/jabba.sh" ] && source "/home/suponer/.jabba/jabba.sh"
