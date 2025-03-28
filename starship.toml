@@ -10,7 +10,6 @@ $username$directory$git_branch$git_status
 $character
 """
 continuation_prompt = '▶▶ '
-add_newline = false
 
 # Note the use of Catppuccin color 'peach'
 [character]
