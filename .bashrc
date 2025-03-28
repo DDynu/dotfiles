@@ -146,17 +146,17 @@ eval "$(tmuxifier init -)"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 
-##-----------------------------------------------------
-## synth-shell-prompt.sh
-if [ -f $HOME/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source $HOME/.config/synth-shell/synth-shell-prompt.sh
-fi
-
-##-----------------------------------------------------
-## alias
-if [ -f $HOME/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source $HOME/.config/synth-shell/alias.sh
-fi
+# ##-----------------------------------------------------
+# ## synth-shell-prompt.sh
+# if [ -f $HOME/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
+# 	source $HOME/.config/synth-shell/synth-shell-prompt.sh
+# fi
+#
+# ##-----------------------------------------------------
+# ## alias
+# if [ -f $HOME/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
+# 	source $HOME/.config/synth-shell/alias.sh
+# fi
 
 # alias for checking power supply 
 alias power='upower -i /org/freedesktop/UPower/devices/battery_BAT1' 
@@ -168,15 +168,11 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
-##-----------------------------------------------------
-## synth-shell-prompt.sh
-if [ -f /home/danghynh/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/danghynh/.config/synth-shell/synth-shell-prompt.sh
-fi
-source /usr/share/nvm/init-nvm.sh
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 [ -s "/home/suponer/.jabba/jabba.sh" ] && source "/home/suponer/.jabba/jabba.sh"
+
+# starship
+eval "$(starship init bash)"
