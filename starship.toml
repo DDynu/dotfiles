@@ -6,15 +6,15 @@
 palette = "catppuccin_macchiato"
 # Starship modules
 format="""
-$username$directory$git_branch$git_status
+$username$hostname$directory$git_branch$git_status$package
 $character
 """
 continuation_prompt = '▶▶ '
 
 # Note the use of Catppuccin color 'peach'
 [character]
-success_symbol = "[[󰄛](green) ❯](peach)"
-error_symbol = "[[󰄛](red) ❯](peach)"
+success_symbol = "[[󰄛](green) ➜ ](peach)"
+error_symbol = "[[󰄛](red) ➜ ](peach)"
 vimcmd_symbol = "[󰄛 ❮](subtext1)" # For use with zsh-vi-mode
 
 [username]
