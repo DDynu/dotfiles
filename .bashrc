@@ -176,3 +176,20 @@ export PATH=$HOME/.local/bin:$PATH
 
 # starship
 eval "$(starship init bash)"
+
+# Check for venv and run source
+# # Get the current directory
+current_directory=$(pwd)/venv/
+
+# Check if the directory exists
+if [ -d "$current_directory" ]; then
+    source $current_directory/bin/activate
+fi
+
+# pyenv check
+eval "$(pyenv init -)"
+    
+alias sce='HSA_OVERRIDE_GFX_VERSION=10.3.0 python3 main.py'
+# Add git autocompletion
+source /usr/share/bash-completion/completions/git
+export TERM=xterm-256color
