@@ -189,7 +189,7 @@ fi
 # pyenv check
 eval "$(pyenv init -)"
     
-alias sce='HSA_OVERRIDE_GFX_VERSION=10.3.0 python3 main.py'
+alias sce='HSA_OVERRIDE_GFX_VERSION=10.3.0 python3 main.py --listen'
 # Add git autocompletion
 source /usr/share/bash-completion/completions/git
 export TERM=xterm-256color
