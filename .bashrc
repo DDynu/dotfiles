@@ -187,8 +187,10 @@ if [ -d "$current_directory" ]; then
 fi
 
 # pyenv check
+export PYENV_ROOT="$HOME/.pyenv"   
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-    
+
 alias sce='HSA_OVERRIDE_GFX_VERSION=10.3.0 python3 main.py --listen'
 # Add git autocompletion
 source /usr/share/bash-completion/completions/git
