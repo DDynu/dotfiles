@@ -15,7 +15,7 @@ ln -sF $HOME/.dotfiles/.bashrc ~/.bashrc
 echo "Installing dependencies..."
 # nvm 
 echo "nvm"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash > /dev/null 2>&1
+curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash > /dev/null 2>&1
 # pyenv
 echo "pyenv"
 curl -fsSL https://pyenv.run | bash > /dev/null 2>&1
@@ -47,6 +47,6 @@ ln -sF $HOME/.dotfiles/.config/nvim-nvchad/nvim ~/.config/
 
 # Install starship
 echo "Install starship..."
-curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin
+curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin -y > /dev/null 2>&1
 ln -sf $HOME/.dotfiles/starship.toml $HOME/.config/
 echo "Complete setup!"
