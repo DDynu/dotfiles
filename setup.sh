@@ -3,13 +3,19 @@
 echo "Starting setup process..."
 cd $HOME
 echo "Checking OS..."
-OS=$(grep -i id_like /etc/os-release | awk -F '=' '{print $2}')
+OS=$(grep -iE ^_id= /etc/os-release | awk -F '=' '{print $2}')
+echo "Detected OS: $OS"
 echo "Creating directories..."
 mkdir -p .config
 mkdir -p $HOME/.local/bin/
 # clone bashrc
 echo "Cloning bashrc..."
-ln -sF $HOME/.dotfiles/.bashrc ~/.bashrc
+read -p ".bashrc file will be removed! Are you sure you want to continue? (Y/n) " yn
+case $yn in
+  [Yy]* ) rm $HOME/.bashrc;ln -sF $HOME/.dotfiles/.bashrc ~/.bashrc;break;;
+  [Nn]* ) echo "Exiting...";exit;;
+  * ) rm $HOME/.bashrc;ln -sF $HOME/.dotfiles/.bashrc ~/.bashrc;;
+esac
 
 # Install dependencies
 echo "Installing dependencies..."
@@ -39,8 +45,8 @@ then
     echo "neovim could not be found"
     echo "Installing neovim 0.11.3 with tar"
     curl -fsSL https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.tar.gz > nvim-linux-x86_64.tar.gz
-    tar -xzf nvim-linux-x86_64.tar.gz -C /usr/local/
-    ln -sF /usr/local/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
+    tar -xzf nvim-linux-x86_64.tar.gz -C $HOME/.local/
+    ln -sF $HOME/.local/nvim-linux-x86_64/bin/nvim $HOME/.local/bin/nvim
     echo "Download neovim complete!"
 fi
 ln -sF $HOME/.dotfiles/.config/nvim-nvchad/nvim ~/.config/
