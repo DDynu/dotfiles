@@ -195,3 +195,7 @@ alias sce='HSA_OVERRIDE_GFX_VERSION=10.3.0 python3 main.py --listen'
 # Add git autocompletion
 source /usr/share/bash-completion/completions/git
 export TERM=xterm-256color
+
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
