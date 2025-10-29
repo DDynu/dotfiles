@@ -1,5 +1,5 @@
 # See https://wiki.hyprland.org/Configuring/Keywords/
-$mainMod = SUPER # Sets "Windows" key as main modifier
+$mainMod = ALT # Sets "Windows" key as main modifier
 
 # RULE
 # BIND MOD       KEY    DISPATCHER  VALUE
@@ -20,17 +20,18 @@ bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, O, togglesplit, # dwindle
 
 # Add binds for pesonal use
-bind = $mainMod, G, exec, firefox #firefox
+bind = $mainMod, G, exec, chromium --disable-features=WaylandWpColorManagerV1 #chromium
 bind = $mainMod SHIFT, C, exec, code # vscode 
 
 # Screen shot
 bind = , code:642, exec, grim -g "$(slurp -d)" - | wl-copy
+bind = SUPER SHIFT, , exec, grim -g "$(slurp -d)" - | wl-copy
 
 # Move focus with mainMod + vim keys 
 bind = $mainMod, H, movefocus, l
 bind = $mainMod, L, movefocus, r
-bind = $mainMod, J, movefocus, u
-bind = $mainMod, K, movefocus, d
+bind = $mainMod, k, movefocus, u
+bind = $mainMod, j, movefocus, d
 
 # Move windows with mainMod + arrows keys
 bind = $mainMod, code:113, movewindow, l
@@ -38,11 +39,15 @@ bind = $mainMod, code:114, movewindow, r
 bind = $mainMod, code:111, movewindow, u
 bind = $mainMod, code:116, movewindow, d
 
+bind = $mainMod SHIFT, h, movewindow, l
+bind = $mainMod SHIFT, l, movewindow, r
+bind = $mainMod SHIFT, k, movewindow, u
+bind = $mainMod SHIFT, j, movewindow, d
 # Special Keys
 bind = , xf86monbrightnessup, exec, swayosd-client --brightness +10
 bind = , xf86monbrightnessdown, exec, swayosd-client --brightness -10
-bind = , xf86audioraisevolume, exec, swayosd-client --output-volume raise 5
-bind = , xf86audiolowervolume, exec, swayosd-client --output-volume lower 5
+bind = , xf86audioraisevolume, exec, pamixer -i 5
+bind = , xf86audiolowervolume, exec, pamixer -d 5
 bind = , xf86audiomute, exec, swayosd-client --output-volume mute-toggle 
 bind = , xf86audiomicmute, exec, swayosd-client --input-volume mute-toggle 
 bind = , xf86audioplay, exec, playerctl play
@@ -87,3 +92,4 @@ bindm = $mainMod, mouse:273, resizewindow
 # bind = CTRL, L, exec, systemctl suspend 
 # Lock screen only
 bind = CTRL SHIFT, L, exec, hyprlock
+bind = SUPER, L, exec, hyprlock
