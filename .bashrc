@@ -196,10 +196,11 @@ alias sce='HSA_OVERRIDE_GFX_VERSION=10.3.0 python3 main.py --listen'
 source /usr/share/bash-completion/completions/git
 export TERM=xterm-256color
 
-# Use bash-completion, if available
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+# Use bash-completion, if available, and avoid double-sourcing
+[[ $PS1 &&
+  ! ${BASH_COMPLETION_VERSINFO:-} &&
+  -f /usr/share/bash-completion/bash_completion ]] &&
     . /usr/share/bash-completion/bash_completion
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
