@@ -9,7 +9,7 @@
   "modules-right": [
     "clock",
   //  "group/connection",
-  // "battery",
+    "battery",
   // "tray",
 	// "custom/notification",
     "group/group-right",
@@ -145,7 +145,7 @@
     "format-connected-battery": "<span color='#0b57d0'></span> {icon} {device_battery_percentage}%",
     "tooltip-format": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias} {device_battery_percentage}%",
-    "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "on-click": "blueman-manager",
   },
   "network": {
@@ -158,13 +158,13 @@
   },
   "battery": {
     "format": "{icon} {capacity}%",
-    "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "states": {
       "warning": 30,
-      "critical": 15,
+      "critical": 15
     },
-    "format-charging": " {capacity}%",
-    "format-alt": "{icon} {time}",
+    "format-charging": "󰂉 {capacity}%",
+    "format-alt": "{capacity}%",
   },
 
   "memory": {

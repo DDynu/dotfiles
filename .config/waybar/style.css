@@ -116,6 +116,7 @@ window#waybar {
 }
 
 /*hover animations*/
+#group-right:hover,
 #workspaces:hover,
 #workspaces button:hover,
 #clock:hover,
