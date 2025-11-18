@@ -19,18 +19,16 @@
   // Grouping
   "group/group-right": {
     "orientation": "horizontal",
-    "modules": ["tray", "custom/notification"]
+    "modules": ["network", "bluetooth", "tray", "custom/notification"]
   },
   "group/connection": {
     "orientation": "horizontal",
-    "modules": ["bluetooth", "network"],
-    "modules": ["bluetooth"]
+    "modules": ["bluetooth", "network"]
   },
   "group/group-power": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 500,
-      "children-class": "not-power",
       "transition-left-to-right": false
     },
     "modules": [
@@ -46,7 +44,12 @@
     "modules": ["backlight", "pulseaudio", "custom/playerctl", "custom/playerlabel", "cava"]
   },
   "group/group-hardware": {
-    "orientation": "horizontal",
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": true 
+    },
     "modules": ["cpu", "temperature", "memory"]
   },
   "group/group-player": {
@@ -139,9 +142,9 @@
     "on-click-right": "pwvucontrol",
   },
   "bluetooth": {
-    "format": "<span color='#0b57d0'></span> {status}",
-    "format-disabled": "<span color='red'></span> {status}",
-    "format-connected": "<span color='#0b57d0'></span> {num_connections}",
+    "format": "<span color='#0b57d0'></span>",
+    "format-disabled": "<span color='red'></span>",
+    "format-connected": "<span color='#0b57d0'></span>",
     "format-connected-battery": "<span color='#0b57d0'></span> {icon} {device_battery_percentage}%",
     "tooltip-format": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias} {device_battery_percentage}%",
@@ -150,11 +153,11 @@
   },
   "network": {
     "format": "{ifname}",
-    "format-wifi": "<span color='#00d8ff'> </span>{essid}",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "format-disconnected": "<span color='red'>󰖪 </span>No Network",
-    "tooltip": false,
-    "on-click": "iwgtk",
+    "format-wifi": "<span color='#00d8ff'></span>",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "<span color='red'>󰖪</span>",
+    "tooltip-format": "{ipaddr}/{cidr} {essid}",
+    "on-click-right": "kitty nmtui",
   },
   "battery": {
     "format": "{icon} {capacity}%",

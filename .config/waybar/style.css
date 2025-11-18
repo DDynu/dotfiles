@@ -59,10 +59,11 @@ window#waybar {
 }
 
 /*left connect modules*/
+#network,
 #cpu,
-#bluetooth,
+/* #bluetooth, */
 #backlight,
-#tray,
+/* #tray, */
 #custom-playerctl {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -80,6 +81,8 @@ window#waybar {
 }
 
 /*middle modules */
+#bluetooth,
+#tray,
 #pulseaudio,
 #temperature {
   padding-right: 5px;
@@ -146,4 +149,7 @@ window#waybar {
 
 #cava, #player-label {
   margin-left: 10px;
+}
+#tray {
+  padding-right: 10px;
 }
