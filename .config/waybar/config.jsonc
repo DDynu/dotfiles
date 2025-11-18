@@ -166,7 +166,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format-charging": "󰂉 {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
     "format-alt": "{capacity}%",
   },
 
