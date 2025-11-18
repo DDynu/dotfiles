@@ -8,7 +8,7 @@ exec-once = swaync
 exec-once = hypridle
 
 # Add execs for autostart users app
- exec-once = [workspace 2 silent] chromium --disable-features=WaylandWpColorManagerV1 #chromium
+exec-once = [workspace 2 silent] chromium --disable-features=WaylandWpColorManagerV1 --enable-features=TouchpadOverscrollHistoryNavigation #chromium
 
 # Mouse cursors
 exec-once = hyprctl setcursor Layan-border-cursors 24
