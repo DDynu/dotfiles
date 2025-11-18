@@ -138,10 +138,10 @@ export NVM_DIR="$HOME/.nvm"
 #nvim search with preview with fzf
 alias fnvim='nvim $(fzf --preview="bat --color=always {}")'
 
-#setup tmuxifier
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-
-eval "$(tmuxifier init -)"
+# #setup tmuxifier
+# export PATH="$HOME/.tmuxifier/bin:$PATH"
+#
+# eval "$(tmuxifier init -)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
