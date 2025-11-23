@@ -8,7 +8,7 @@ bind = $mainMod, Q, exec, $terminal
 bind = $mainMod SHIFT, Q, exec, $terminal --title float 
 bind = $mainMod, C, killactive,
 bind = $mainMod, M, exit,
-bind = $mainMod, W, exec, waybar,
+bind = $mainMod, W, exec, pkill waybar && waybar
 
 bind = $mainMod, F, fullscreen, 0 
 bind = $mainMod SHIFT, F, fullscreen, 1 

@@ -1,4 +1,4 @@
 workspace = 1, persistent:true
-workspace = 2, persistent:true
+workspace = 2, persistent:true, monitor:HDMI-A-1
 workspace = 3, persistent:true
-workspace = 4, persistent:true
+workspace = 4, persistent:true, monitor:HDMI-A-1
