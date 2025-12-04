@@ -21,7 +21,7 @@ return {
     opts = {
       ensure_installed = {
         "vim", "lua", "vimdoc",
-        "html", "css", "tsx", "javascript"
+        "html", "css", "tsx", "javascript", "gdscript"
       },
     },
   },

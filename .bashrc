@@ -191,7 +191,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-alias sce='HSA_OVERRIDE_GFX_VERSION=10.3.0 python3 main.py --listen'
+alias sce='python3 main.py --listen'
 # Add git autocompletion
 source /usr/share/bash-completion/completions/git
 export TERM=xterm-256color
@@ -205,3 +205,8 @@ export TERM=xterm-256color
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export EDITOR=nvim
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/suponer/.lmstudio/bin"
+# End of LM Studio CLI section
+
