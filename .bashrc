@@ -210,3 +210,4 @@ export EDITOR=nvim
 export PATH="$PATH:/home/suponer/.lmstudio/bin"
 # End of LM Studio CLI section
 
+alias whatsmyip='curl https://ipinfo.io/ip'
