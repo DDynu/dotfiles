@@ -224,6 +224,7 @@
     "higher_cutoff_freq": 10000,
     "method": "pulse",
     "source": "auto",
+    "delay": 4,
     "stereo": true,
     "reverse": false,
     "bar_delimiter": 0,

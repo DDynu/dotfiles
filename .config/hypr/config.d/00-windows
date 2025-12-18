@@ -8,3 +8,4 @@ windowrulev2 = float, class:(iwgtk)|(blueman-manager)
 
 # Steam
 windowrule = float, size 1200 850, center, title:(Friends List)|(Steam Settings)
+windowrule = fullscreen, title:(?i).*(nomachine).*
