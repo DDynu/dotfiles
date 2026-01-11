@@ -2,10 +2,13 @@ windowrulev2 = float, title:^(float)$
 windowrulev2 = size 1000 600,title:(float)
 
 # Floating classes for apps
-windowrulev2 = float, title:(iwgtk)|(Bluetooth)|(Calendar)|(Pipewire Volume Control)
+windowrule = float on, match:title (iwgtk)|(Bluetooth)|(Calendar)|(Pipewire Volume Control)
 windowrulev2 = size 1200 850, title:(iwgtk)|(Bluetooth)|(Calendar)
 windowrulev2 = float, class:(iwgtk)|(blueman-manager)
 
 # Steam
-windowrule = float, size 1200 850, center, title:(Friends List)|(Steam Settings)
-windowrule = fullscreen, title:(?i).*(nomachine).*
+windowrule = float on, size 1200 850, center on, match:title (Friends List)|(Steam Settings)
+windowrule = match:title (?i).*(nomachine).*, fullscreen on
+
+# Looking glass
+windowrule = fullscreen on, match:class (looking-glass-client)
