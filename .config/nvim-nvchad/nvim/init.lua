@@ -35,3 +35,6 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
