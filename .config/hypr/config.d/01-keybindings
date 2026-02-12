@@ -20,7 +20,8 @@ bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, O, togglesplit, # dwindle
 
 # Add binds for pesonal use
-bind = $mainMod, G, exec, chromium --disable-features=WaylandWpColorManagerV1 --enable-features=TouchpadOverscrollHistoryNavigation #chromium
+# bind = $mainMod, G, exec, chromium --disable-features=WaylandWpColorManagerV1 --enable-features=TouchpadOverscrollHistoryNavigation #chromium
+bind = $mainMod, G, exec, librewolf
 bind = $mainMod SHIFT, C, exec, code # vscode 
 
 # Screen shot

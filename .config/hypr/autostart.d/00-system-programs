@@ -1,4 +1,4 @@
-exec-once = hyprpaper
+# exec-once = hyprpaper
 exec-once = waybar
 # exec-once = /usr/lib/polkit-kde-authentication-agent-1
 # exec-once = hyprlock
@@ -10,7 +10,8 @@ exec-once = swaync
 # exec-once = nm-applet
 
 # Add execs for autostart users app
-exec-once = [workspace 2 silent] chromium --disable-features=WaylandWpColorManagerV1 --enable-features=TouchpadOverscrollHistoryNavigation #chromium
+# exec-once = [workspace 2 silent] chromium --disable-features=WaylandWpColorManagerV1 --enable-features=TouchpadOverscrollHistoryNavigation #chromium
+exec-once = [workspace 2 silent] librewolf
 
 # Mouse cursors
 exec-once = hyprctl setcursor Layan-border-cursors 24
