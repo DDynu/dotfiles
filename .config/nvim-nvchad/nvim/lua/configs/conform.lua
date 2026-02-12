@@ -4,15 +4,23 @@ local options = {
     css = { "prettier" },
     html = { "prettier" },
     python = { "black" },
-    c = {"clang-format"},
-    cpp = {"clang-format"}
+    c = { "clang_format" },
+    cpp = { "clang_format" },
   },
 
-  --   format_on_save = {
-  --     -- These options will be passed to conform.format()
-  --     timeout_ms = 1000,
-  --     lsp_fallback = true,
-  --   },
+  format_on_save = {
+    -- These options will be passed to conform.format()
+    timeout_ms = 1000,
+    lsp_fallback = true,
+  },
+
+  formatters = {
+    clang_format = {
+      prepend_args = {
+        "-style={UseTab: Always, IndentWidth: 4, TabWidth: 4}",
+      },
+    },
+  },
 }
 
 return options
