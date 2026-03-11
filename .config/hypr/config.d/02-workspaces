@@ -1,7 +1,8 @@
-workspace = 1, persistent:true, monitor:HDMI-A-1
-workspace = 2, persistent:true, monitor:DP-1
-workspace = 3, persistent:true, monitor:HDMI-A-1
-workspace = 4, persistent:true, monitor:DP-1
+workspace = 1, persistent:true, monitor:desc:ViewSonic Corporation VX2479 Series X9N234600303
+workspace = 2, persistent:true, monitor:desc:Microstep MSI MP243 PB5H113601128
+workspace = 3, persistent:true, monitor:desc:ViewSonic Corporation VX2479 Series X9N234600303
+workspace = 4, persistent:true, monitor:desc:Microstep MSI MP243 PB5H113601128
+
 
 # Laptop
 # workspace = 1, persistent:true
