@@ -14,4 +14,4 @@ exec-once = swaync
 exec-once = [workspace 2 silent] librewolf
 
 # Mouse cursors
-exec-once = hyprctl setcursor Layan-border-cursors 24
+# exec-once = hyprctl setcursor Layan-border-cursors 24
