@@ -30,6 +30,7 @@ style = "bold blue"
 
 [os.symbols]
 Arch = "[󰣇](bold blue)"
+Macos = "[](bold white)"
 [directory]
 truncation_length = 4
 style = "bold lavender"
