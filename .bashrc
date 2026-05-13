@@ -112,16 +112,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
 #LIVE_COUNTER=$(ps a | awk '{print $2}' | grep -vi "tty*" | uniq | wc -l);
 #if [ $LIVE_COUNTER -eq 1 ]; then
  #    neofetch
@@ -139,24 +129,11 @@ export NVM_DIR="$HOME/.nvm"
 alias fnvim='nvim $(fzf --preview="bat --color=always {}")'
 
 # #setup tmuxifier
-# export PATH="$HOME/.tmuxifier/bin:$PATH"
+export PATH="$HOME/.tmuxifier/bin:$PATH"
 #
 # eval "$(tmuxifier init -)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-
-# ##-----------------------------------------------------
-# ## synth-shell-prompt.sh
-# if [ -f $HOME/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
-# 	source $HOME/.config/synth-shell/synth-shell-prompt.sh
-# fi
-#
-# ##-----------------------------------------------------
-# ## alias
-# if [ -f $HOME/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
-# 	source $HOME/.config/synth-shell/alias.sh
-# fi
 
 # alias for checking power supply 
 alias power='upower -i /org/freedesktop/UPower/devices/battery_BAT1' 
@@ -167,12 +144,6 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-[ -s "/home/suponer/.jabba/jabba.sh" ] && source "/home/suponer/.jabba/jabba.sh"
 
 # starship
 eval "$(starship init bash)"
@@ -211,3 +182,7 @@ export PATH="$PATH:/home/suponer/.lmstudio/bin"
 # End of LM Studio CLI section
 
 alias whatsmyip='curl https://ipinfo.io/ip'
+
+# Claude env
+export ANTHROPIC_BASE_URL="http://localhost:11434"
+export ANTHROPIC_API_KEY='sk-no-key-required' ## or 'sk-1234'
