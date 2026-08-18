@@ -121,10 +121,6 @@ fi
 
 export PATH=$HOME/.local/bin:$PATH
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # extra commands added by Dang Huynh for the pc
 
 #nvim search with preview with fzf
@@ -137,34 +133,14 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# alias for checking power supply 
-alias power='upower -i /org/freedesktop/UPower/devices/battery_BAT1' 
-
-# fnm
-FNM_PATH="$HOME/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
-
 # starship
 eval "$(starship init bash)"
-
-# Check for venv and run source
-# # Get the current directory
-current_directory=$(pwd)/venv/
 
 # Check if the directory exists
 if [ -d "$current_directory" ]; then
     source $current_directory/bin/activate
 fi
 
-# pyenv check
-export PYENV_ROOT="$HOME/.pyenv"   
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-alias sce='python3 main.py --listen'
 # Add git autocompletion
 source /usr/share/bash-completion/completions/git
 export TERM=xterm-256color
@@ -174,17 +150,6 @@ export TERM=xterm-256color
   ! ${BASH_COMPLETION_VERSINFO:-} &&
   -f /usr/share/bash-completion/bash_completion ]] &&
     . /usr/share/bash-completion/bash_completion
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 export EDITOR=nvim
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/suponer/.lmstudio/bin"
-# End of LM Studio CLI section
-
 alias whatsmyip='curl https://ipinfo.io/ip'
-
-# Claude env
-export ANTHROPIC_BASE_URL="http://localhost:11434"
-export ANTHROPIC_API_KEY='sk-no-key-required' ## or 'sk-1234'
